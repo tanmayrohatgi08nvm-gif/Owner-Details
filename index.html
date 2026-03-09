@@ -5,51 +5,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Car Owner Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+}
+
+/* Ultra premium background */
+
 body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#fff7e6,#ffe9cc);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at 15% 20%, rgba(255,215,0,0.18), transparent 40%),
+radial-gradient(circle at 85% 80%, rgba(120,170,255,0.18), transparent 40%),
+radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 60%),
+linear-gradient(140deg,#0f2027,#203a43,#2c5364,#1f1c2c);
+background-size:200% 200%;
+animation:premiumFlow 18s ease infinite;
+position:relative;
 }
+
+/* smooth background motion */
+
+@keyframes premiumFlow{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* floating light particles */
+
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+background-size:60px 60px;
+animation:particleMove 40s linear infinite;
+opacity:0.25;
+}
+
+@keyframes particleMove{
+from{transform:translateY(0)}
+to{transform:translateY(-120px)}
+}
+
+/* glass luxury card */
+
 .card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    max-width:420px;
-    text-align:center;
+position:relative;
+z-index:2;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+backdrop-filter:blur(22px);
+padding:40px;
+border-radius:28px;
+box-shadow:0 40px 100px rgba(0,0,0,0.65);
+max-width:420px;
+width:92%;
+text-align:center;
+color:white;
+animation:cardReveal 0.8s ease;
 }
-h1{
-    font-size:22px;
-    margin-bottom:10px;
+
+/* card animation */
+
+@keyframes cardReveal{
+from{
+opacity:0;
+transform:translateY(30px) scale(0.95);
 }
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+.title{
+font-size:26px;
+font-weight:600;
+margin-bottom:16px;
+letter-spacing:0.6px;
+}
+
 .message{
-    font-size:18px;
-    margin:15px 0;
-    line-height:1.5;
+font-size:16px;
+line-height:1.7;
+opacity:0.9;
+margin-bottom:24px;
 }
+
+/* luxury buttons */
+
 .call{
-    display:block;
-    text-decoration:none;
-    margin:10px 0;
-    padding:14px;
-    border-radius:12px;
-    background:#ffcc80;
-    color:black;
-    font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+text-decoration:none;
+margin:10px 0;
+padding:15px;
+border-radius:14px;
+background:linear-gradient(135deg,#ffd700,#ffcc33);
+color:#111;
+font-weight:600;
+transition:all 0.25s ease;
+box-shadow:0 8px 20px rgba(0,0,0,0.35);
 }
+
 .call:hover{
-    background:#ffb74d;
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 14px 30px rgba(0,0,0,0.5);
 }
+
 .footer{
-    margin-top:15px;
-    font-size:14px;
-    opacity:0.7;
+margin-top:18px;
+font-size:14px;
+opacity:0.75;
 }
+
 </style>
 </head>
 
@@ -57,20 +146,20 @@ h1{
 
 <div class="card">
 
-<h1>🚗 Car Owner Contact</h1>
+<div class="title">🚗 Car Owner Contact</div>
 
 <div class="message">
 🙂 Hey there!<br><br>
 Shayad galti meri ho… par insaaniyat aapki hai 🙏<br><br>
-Agar meri car ki wajah se aapko dikkat ho rahi hai,
+Agar meri car ki wajah se aapko dikkat ho rahi hai,<br>
 toh please ek call kar dena 📞<br>
-Main turant aa jaunga.
+<strong>Main turant aa jaunga.</strong>
 </div>
 
-<a class="call" href="tel:9650285660">📞 Call 9650285660</a>
-<a class="call" href="tel:9899988765">📞 Call 9899988765</a>
-<a class="call" href="tel:9711626210">📞 Call 9711626210</a>
-<a class="call" href="tel:8287672829">📞 Call 8287672829</a>
+<a class="call" href="tel:9650285660">📞 9650285660</a>
+<a class="call" href="tel:9899988765">📞 9899988765</a>
+<a class="call" href="tel:9711626210">📞 9711626210</a>
+<a class="call" href="tel:8287672829">📞 8287672829</a>
 
 <div class="footer">
 Thank you for your patience 🙏
